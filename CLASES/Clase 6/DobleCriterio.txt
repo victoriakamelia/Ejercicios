@@ -1,0 +1,63 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define TAM 10
+
+int main()
+{
+    int legajos[TAM] = {123, 543, 679, 432, 567, 111, 323, 145, 674, 543};
+    int edades[TAM] = {23, 24, 21, 23, 22, 22, 44, 36, 29, 38};
+    char sexos[TAM] = {'f', 'f', 'm', 'f', 'm', 'm', 'f', 'f', 'm', 'f'};
+    int auxInt;
+    char auxChar;
+
+
+    for(int i=0; i < TAM - 1;  i++)
+    {
+        for(int j = i +1; j < TAM;  j++)
+        {
+            if( sexos[i] > sexos[j])
+            {
+                auxInt = legajos[i];
+                legajos[i] = legajos[j];
+                legajos[j] = auxInt;
+
+                auxInt = edades[i];
+                edades[i] = edades[j];
+                edades[j] = auxInt;
+
+                auxChar = sexos[i];
+                sexos[i] = sexos[j];
+                sexos[j] = auxChar;
+            }
+            else if( sexos[i] == sexos[j] && edades[i] < edades[j])
+                {
+                        auxInt = legajos[i];
+                        legajos[i] = legajos[j];
+                        legajos[j] = auxInt;
+
+                        auxInt = edades[i];
+                        edades[i] = edades[j];
+                        edades[j] = auxInt;
+
+
+
+                }
+            }
+
+
+
+        }
+
+
+
+        for(int i=0; i < TAM;  i++)
+        {
+
+
+            printf("%d      %c      %d\n", legajos[i], sexos[i], edades[i]);
+
+
+        }
+        return 0;
+    }
