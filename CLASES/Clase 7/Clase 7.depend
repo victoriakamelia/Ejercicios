@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1555096623 source:c:\users\e300ddf\desktop\tp2\clase 7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"biblioteca.h"
+
+1555096468 source:c:\users\e300ddf\desktop\tp2\clase 7\biblioteca.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"biblioteca.h"
+
+1555096468 c:\users\e300ddf\desktop\tp2\clase 7\biblioteca.h
+
