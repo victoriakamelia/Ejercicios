@@ -9,16 +9,27 @@ typedef struct
 } Eempleado;
 
 
-
-void mostrarEmpleado(Eempleado emp);
-int mostrarEmpleados(Eempleado[],int tam);
-void ordenamiento(Eempleado[], int tam);
-int buscarLibre(Eempleado[], int tam);
-int buscarId(Eempleado[], int tam, int id);
 char validarSeguir();
-int pedirSexo(Eempleado emp[],int index);
-int getInt(Eempleado emp[],int index);
-int getFloat(Eempleado emp[],int index);
-int getText(Eempleado emp[],int index);
 int bajaEmpleado(Eempleado emp[],int tam, int id);
+int buscarId(Eempleado[], int tam, int id);
+int buscarLibre(Eempleado[], int tam);
+
+int getFloat(Eempleado emp[],int index);
+int getInt(Eempleado emp[],int tam, int index);
+int getText(Eempleado emp[],int index);
+
+int modificarEmpleado(Eempleado emp[],int indice, int opcion2);
+int mostrarEmpleados(Eempleado[],int tam);
+int pedirSexo(Eempleado emp[],int index);
+void cargarEmpleado(Eempleado emp[], int tam);
+void initEmpleado(Eempleado emp[], int tam);
+void mostrarEmpleado(Eempleado emp);
+void ordenamiento(Eempleado[], int tam);
+
+
+
+
+
+
+
 

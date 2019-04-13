@@ -7,23 +7,17 @@
 #define OCUPADO 1
 #define TAM 3
 
-int cargarEmpleado(Eempleado emp[], int tam);
-int modificarEmpleado(Eempleado emp[],int indice, int opcion2);
 
 int main()
 {
     Eempleado emp[TAM];//={{"JUAN",'M',1111,1111, 1}, {"ANA", 'F',2222,2222, 1}};
-    int i;
     int opcion;
     int opcion2;
     int auxIndex;
     char seguir='S';
     int indice;
 
-    for(i=0; i<TAM; i++)
-    {
-        emp[i].estado = VACIO;
-    }
+    initEmpleado(emp,TAM);
 
     while(seguir=='S')
     {
@@ -54,18 +48,10 @@ int main()
         {
         case 1:
             system("cls");
-            if(cargarEmpleado(emp, TAM)==-1)
-            {
-                printf("---------------------------------------------------\n");
-                printf("----------*      No hay espacio.      *------------\n");
-                printf("---------------------------------------------------\n");
-            }
-            else
-            {
-                printf("---------------------------------------------------\n");
-                printf("----------*       Empleado generado.  *------------\n");
-                printf("---------------------------------------------------\n");
-            }
+            cargarEmpleado(emp, TAM);
+
+
+
 
             seguir=validarSeguir();
             break;
@@ -168,66 +154,5 @@ int main()
     return 0;
 }
 
-int cargarEmpleado(Eempleado emp[], int tam)
-{
 
-    int index = buscarLibre(emp,tam);
-
-    if(index !=-1)
-    {
-
-        if(getInt(emp, index)       ==0 &&
-                getText(emp, index) ==0 &&
-                pedirSexo(emp,index)==0 &&
-                getFloat(emp, index)==0)
-        {
-            emp[index].estado = OCUPADO;
-        }
-
-
-    }
-    else
-    {
-        index=-1;
-    }
-
-    return index;
-}
-
-int modificarEmpleado(Eempleado emp[],int indice, int opcion2)
-{
-    int retorno=-1;
-
-   if(opcion2==1)
-   {
-     getText(emp, indice);
-        retorno=0;
-
-   }else
-   if(opcion2==2)
-   {
-
-     pedirSexo(emp, indice);
-        retorno=0;
-
-   }else
-   if(opcion2==3)
-   {
-       getFloat(emp, indice);
-        retorno=0;
-
-   }else
-   {
-        printf("-----INGRESO OPCION INCORRECTA----");
-
-   }
-
-
-
-
-
-
-    return retorno;
-
-}
 
