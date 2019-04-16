@@ -2,8 +2,14 @@
 #include <stdlib.h>
 #include <ctype.h>
 #include <conio.h>
+#define TAM 4
 
-#define TAM 2
+typedef struct
+{
+    int dia;
+    int mes;
+    int anio;
+}eFecha;
 
 typedef struct
 {
@@ -13,6 +19,7 @@ typedef struct
     char sexo;
     float sueldo;
     int ocupado;
+    eFecha ingreso;
 
 } eEmpleado;
 
@@ -25,13 +32,17 @@ void mostrarEmpleados(eEmpleado vec[], int tam);
 void altaEmpleado(eEmpleado vec[], int tam);
 void bajaEmpleado(eEmpleado vec[], int tam);
 void ModificacionEmpleado(eEmpleado vec[], int tam);
+void harcodeEmpleado(eEmpleado list[], int tam);
+void empleadoAnio(eEmpleado list[], int tam, int anio);
 
 int main()
 {
     char seguir = 's';
     char confirma;
+    int anio;
     eEmpleado lista[TAM];
-    inicializarEmpleados(lista, TAM); // llamada
+    //inicializarEmpleados(lista, TAM);
+    harcodeEmpleado(lista, TAM);
 
     do
     {
@@ -66,8 +77,15 @@ int main()
             mostrarEmpleados(lista, TAM);
             system("pause");
             break;
-
         case 6:
+            printf("Informes: \n");
+            printf("Ingrese anio: ");
+            scanf("%d", &anio);
+            empleadoAnio(lista, TAM, anio);
+            system("pause");
+            break;
+
+        case 7:
             printf("\nConfirma salida s/n?: ");
             fflush(stdin);
             confirma = getche();
@@ -88,14 +106,15 @@ int main()
     return 0;
 }
 
-void inicializarEmpleados(eEmpleado vec[], int tam)
+/*void inicializarEmpleados(eEmpleado vec[], int tam)
 {
+    int i;
 
-    for(int i=0; i < tam; i++)
+    for(i=0; i < tam; i++)
     {
         vec[i].ocupado = 0;
     }
-}
+}*/
 
 int menu()
 {
@@ -108,7 +127,8 @@ int menu()
     printf("3- Modificacion Empleado\n");
     printf("4- Ordenar Empleados\n");
     printf("5- Listar Empleados\n");
-    printf("6- Salir\n\n");
+    printf("6- Informes\n");
+    printf("7- Salir\n\n");
     printf("Ingrese opcion: ");
     scanf("%d", &opcion);
 
@@ -119,8 +139,9 @@ int buscarLibre(eEmpleado vec[], int tam)
 {
 
     int indice = -1;
+    int i;
 
-    for(int i=0; i < tam; i++)
+    for(i=0; i < tam; i++)
     {
         if(vec[i].ocupado == 0)
         {
@@ -135,8 +156,9 @@ int buscarEmpleado(eEmpleado vec[], int tam, int legajo)
 {
 
     int indice = -1;
+    int i;
 
-    for(int i=0; i < tam; i++)
+    for(i=0; i < tam; i++)
     {
         if( vec[i].legajo == legajo && vec[i].ocupado == 1)
         {
@@ -150,15 +172,16 @@ int buscarEmpleado(eEmpleado vec[], int tam, int legajo)
 void mostrarEmpleado(eEmpleado emp)
 {
 
-    printf("  %d   %s   %c    %.2f\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo);
+    printf("  %d   %s   %c    %.2f    %02d/%02d/%d\n", emp.legajo, emp.nombre, emp.sexo, emp.sueldo, emp.ingreso.dia, emp.ingreso.mes, emp.ingreso.anio);
 
 }
 
 void mostrarEmpleados(eEmpleado vec[], int tam)
 {
     int cont= 0;
+    int i;
 
-    for(int i=0; i < tam; i++)
+    for(i=0; i < tam; i++)
     {
         if(vec[i].ocupado == 1)
         {
@@ -208,6 +231,15 @@ void altaEmpleado(eEmpleado vec[], int tam)
             printf("Ingrese sueldo: ");
             scanf("%f", &vec[indice].sueldo);
 
+            printf("Ingrese dia de ingreso:");
+            scanf("%d", &vec[indice].ingreso.dia);
+
+            printf("Ingrese mes de ingreso:");
+            scanf("%d", &vec[indice].ingreso.mes);
+
+            printf("Ingrese anio de ingreso:");
+            scanf("%d", &vec[indice].ingreso.anio);
+
             vec[indice].ocupado = 1;
 
             printf("\nEl empleado ha sido registrado con exito!!!\n\n");
@@ -227,7 +259,7 @@ void bajaEmpleado(eEmpleado vec[], int tam){
 
     int legajo;
     char confirma;
-    int nuevoSueldo;
+    //int nuevoSueldo;
     int esta;
 
     printf("Ingrese legajo: ");
@@ -297,8 +329,42 @@ void ModificacionEmpleado(eEmpleado vec[], int tam){
     }
 
 
-
+}
+void harcodeEmpleado(eEmpleado list[], int tam)
+{
+    int i;
+    eEmpleado hardcode[4]= {
+                            {1111, "ANDRES", 'M', 45000, 1, {5, 6, 2011}},
+                            {2222, "MARTIN", 'M', 25000, 1,{8, 11, 2004}},
+                            {3333, "JUANA", 'F', 8000, 1,{25, 8, 2013}},
+                            {1111, "ANA", 'F', 25000, 1,{6, 6, 2017}}
+                        };
+    for(i=0;i<tam;i++)
+    {
+        list[i]=hardcode[i];
+    }
 
 
 }
+
+void empleadoAnio(eEmpleado list[], int tam, int anio)
+{
+    int cont= 0;
+    int i;
+
+    for(i=0; i < tam; i++)
+    {
+        if(list[i].ocupado == 1 && list[i].ingreso.anio==anio)
+        {
+
+            mostrarEmpleado(list[i]);
+            cont++;
+        }
+    }
+    if(cont == 0)
+    {
+        printf("No hay empleados que mostrar\n\n");
+    }
+}
+
 
