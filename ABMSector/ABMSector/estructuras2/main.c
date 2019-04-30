@@ -585,6 +585,13 @@ void almuezoMasComido(eComida comidas[], int tamCom,eAlmuerzo almuerzos[],int ta
     int max;
     int i, j;
 
+
+    for(i=0; i<tamCom; i++)
+    {
+            comi[i]=0;
+    }
+
+
     for(i=0; i<tamAlm; i++)
     {
         for(j=0; j<tamCom; j++)
