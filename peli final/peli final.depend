@@ -1,0 +1,19 @@
+# depslib dependency file v1.0
+1557515350 source:c:\users\administrator\desktop\peli final\peli.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"PELI.H"
+
+1557515577 c:\users\administrator\desktop\peli final\peli.h
+
+1557515619 source:c:\users\administrator\desktop\peli final\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"PELI.h"
+
