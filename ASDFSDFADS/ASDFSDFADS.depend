@@ -1,0 +1,46 @@
+# depslib dependency file v1.0
+1557504192 source:c:\users\administrator\desktop\asdfsdfads\main.c
+	<stdio.h>
+	<stdlib.h>
+	"FUNCIONES.H"
+	"PELICULAS.H"
+	"PELICULAS.H"
+
+1557502507 source:c:\users\administrator\desktop\asdfsdfads\actores.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"ACTORES.H"
+	"GENERO.H"
+	"FUNCIONES.H"
+	"PELICULAS.H"
+
+1557503367 c:\users\administrator\desktop\asdfsdfads\actores.h
+
+1557503367 c:\users\administrator\desktop\asdfsdfads\genero.h
+
+1557504863 c:\users\administrator\desktop\asdfsdfads\funciones.h
+
+1557505048 c:\users\administrator\desktop\asdfsdfads\peliculas.h
+
+1557501789 source:c:\users\administrator\desktop\asdfsdfads\genero.c
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"ACTORES.H"
+	"GENERO.H"
+	"FUNCIONES.H"
+	"PELICULAS.H"
+
+1557504863 source:c:\users\administrator\desktop\asdfsdfads\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"FUNCIONES.H"
+	"PELICULAS.H"
+	"PELICULAS.H"
+
