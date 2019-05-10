@@ -12,12 +12,14 @@
 
 /**********************************************************************************************************/
 
-/** \brief genera automaticamente un id y solicita por pantalla datos para dar de alta un empleado.
+/** \brief genera automaticamente un id y solicita por pantalla datos para dar de alta una película.
  *
- * \param list[] ePeliculas con el array de empleados a cargar.
+ * \param list[] ePeliculas con el array de peliculas a cargar.
  * \param tam int con el tamaño del array a cargar.
- * \param sector[] eActores con el tamaño del array a recorrer.
- * \param tamSec int con el tamaño del array a recorrer.
+ * \param actor[] eActores con el tamaño del array a recorrer.
+  * \param tamAc int con el tamaño del array a cargar.
+ * \param generos[] eActores con el tamaño del array a recorrer.
+ * \param tamGe int con el tamaño del array a recorrer.
  * \return int retorna -1 si pudo dar de alta o 0 si lo logró.
  *
  */
@@ -63,7 +65,7 @@ int addPeliculas(ePeliculas list[], int tam, eActores actor[], int tamAc, eGener
 
 /** \brief Inicializa un array
  *
- * \param list[] Employee con el array a ser recorrido.
+ * \param list[]  con el array a ser recorrido.
  * \param tam int con el tamaño del array a recorrer.
  * \return int -1 si no pudo inicializar o 0 si lo logró.
  *
@@ -200,9 +202,9 @@ int menu()
 
 /** \brief recorre un array buscando el indice del id solicitado.
  *
- * \param emp[] Employee con el array a recorrer.
+ * \param list[] Employee con el array a recorrer.
  * \param tam int con el tamaño del array a recorrer.
- * \param id int con el id del sector cuyo indice se desea conocer.
+ * \param id int con el id de la pelicula cuyo indice se desea conocer.
  * \return int retorna -1 si no encontro el indice y el numero del indice si lo encontró.
  *
  */
@@ -269,6 +271,11 @@ int menuDos()
 
 
 
+/** \brief genera un id entero autoincremental
+ *
+ * \return int retorno el id incrementado
+ *
+ */
 int generarId()
 {
     static int id=1000;
@@ -276,6 +283,13 @@ int generarId()
     return id++;
 }
 /**********************************************************************************************************/
+/** \brief obtine por pantall y valida una fecha
+ *
+ * \param pelicula[] con el arrray en donde se guardará la fecha
+ * \param indice int con el indice en donde se guardará la fecha
+ * \return void
+ *
+ */
 void getFecha(ePeliculas pelicula[], int indice)
 {
 
@@ -293,6 +307,15 @@ void getFecha(ePeliculas pelicula[], int indice)
 }
 
 /**********************************************************************************************************/
+/** \brief  obtiene por pantalla y valida un entero
+ *
+ * \param message[] char mensaje a mostrar para pedir entero
+ * \param eMessage[] char mensaje a mostrar en caso de un ingreso erróneo
+ * \param lowLimit int menor numero permitido
+ * \param hiLimit int maximo numero permitido
+ * \return int retorna el entero validado
+ *
+ */
 int getInt(char message[],char eMessage[], int lowLimit, int hiLimit)
 {
     int auxNum;
@@ -378,7 +401,7 @@ char validarSeguir()
 
 /** \brief busca en el array si hay lugar disponible.
  *
- * \param list[] Employee con el array a recorrer.
+ * \param list[]  con el array a recorrer.
  * \param tam int con el tamaño del array a recorrer.
  * \return int -1 si no pudo lograr el objetivo o 0 si lo logró.
  *
@@ -426,7 +449,7 @@ int esSoloLetras(char str[])
 
 /** \brief Recorre un array para hacer una baja lógica en el indice solicitado.
  *
- * \param emp[] Employee con el array a recorrer.
+ * \param list[] con el array a recorrer.
  * \param tam int con el tamaño del array a recorrer.
  * \param id int el indice a dar de baja.
  * \return int -1 si no pudo lograr el objetivo o 0 si lo logró.
@@ -449,6 +472,16 @@ int bajaPelicula(ePeliculas list[],int tam, int id)
 }
 
 /**********************************************************************************************************/
+/** \brief
+ *
+ * \param list ePeliculas con la pelicula a mostrar
+ * \param generos[] eGenero con el array de generos
+ * \param tamGe int con el tamaño del array
+ * \param actor[] eActores con el array a recorrer
+ * \param TamAc int con el tamaño del array
+ * \return void
+ *
+ */
 void mostrarPelicula(ePeliculas list, eGenero generos[], int tamGe,eActores actor[], int TamAc)
 {
     int idAct=list.idActor;
@@ -461,6 +494,13 @@ void mostrarPelicula(ePeliculas list, eGenero generos[], int tamGe,eActores acto
 
 
 
+/** \brief da de alta un actor
+ *
+ * \param actores[] eActores con el array de actores a cargar
+ * \param tamAc int con el tamaño del array de actores
+ * \return int retorna -1 si no pudo dar de alta y 0 si lo logro
+ *
+ */
 int altaActor(eActores actores[], int tamAc)
 {
     static int id=100;
@@ -507,22 +547,35 @@ int hayActor(eActores actores[], int tamAc)
     return retorno;
 }
 
+/** \brief inicializa el array de actores
+ *
+ * \param actores[] eActores con el array a inicializar
+ * \param tamAc int con el tamaño del array
+ * \return int retorna -1 si no lo logro y 0 si logró el objetivo
+ *
+ */
 int initActores(eActores actores[], int tamAc)
 {
-    int retorno=0;
+    int retorno=-1;
     int i;
     for(i=0; i<tamAc; i++)
     {
-        if(actores[i].isEmpty==VACIO)
-        {
-            retorno=1;
-            break;
-        }
-    }
+    actores[i].isEmpty==VACIO;
 
+
+
+    }
+        retorno=0;
     return retorno;
 }
 
+/** \brief
+ *
+ * \param genero[] eGenero
+ * \param tamGe int
+ * \return void
+ *
+ */
 void mostrarGeneros(eGenero genero[], int tamGe)
 {
     int i;
@@ -536,6 +589,14 @@ void mostrarGeneros(eGenero genero[], int tamGe)
 
 }
 
+/** \brief
+ *
+ * \param generos[] eGenero
+ * \param tamGe int
+ * \param id int
+ * \return int
+ *
+ */
 int buscarIndiceGenero(eGenero generos[], int tamGe, int id)
 {
     int indice;
@@ -552,6 +613,13 @@ int buscarIndiceGenero(eGenero generos[], int tamGe, int id)
     return indice;
 }
 
+/** \brief
+ *
+ * \param actor[] eActores
+ * \param tamAc int
+ * \return void
+ *
+ */
 void mostrarActores(eActores actor[], int tamAc)
 {
     int i;
@@ -564,6 +632,14 @@ void mostrarActores(eActores actor[], int tamAc)
 
 }
 
+/** \brief
+ *
+ * \param actor[] eActores
+ * \param TamAc int
+ * \param id int
+ * \return int
+ *
+ */
 int buscarIndiceActor(eActores actor[], int TamAc, int id)
 {
     int indice;

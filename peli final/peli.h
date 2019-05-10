@@ -10,6 +10,8 @@ typedef struct
     int isEmpty;
 
 }eActores;
+
+
 typedef struct
 {
     int id;
