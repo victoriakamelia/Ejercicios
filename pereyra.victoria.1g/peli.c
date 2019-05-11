@@ -14,7 +14,7 @@
 
 /** \brief genera automaticamente un id y solicita por pantalla datos para dar de alta una película.
  *
- * \param list[] ePeliculas con el array de peliculas a cargar.
+ * \param list[] eAuto con el array de autos a cargar.
  * \param tam int con el tamaño del array a cargar.
  * \param actor[] eActores con el tamaño del array a recorrer.
   * \param tamAc int con el tamaño del array a cargar.
@@ -24,7 +24,7 @@
  *
  */
 
-int addPeliculas(ePeliculas list[], int tam, eActores actor[], int tamAc, eGenero generos[], int tamGe)
+int addautos(eAuto list[], int tam, eMarca marca[], int tamMar, eColor colores[], int tamCo)
 {
     int retorno=-1;
     int id=generarId();
@@ -33,22 +33,23 @@ int addPeliculas(ePeliculas list[], int tam, eActores actor[], int tamAc, eGener
     if(buscarLibre(list, tam)==-1)
     {
         printf("\n________________________________________________________________\n\n");
-        printf("NO QUEDA LUGAR DISPONIBLE PARA GENERAR PELICULAS.\n");
+        printf("NO QUEDA LUGAR DISPONIBLE PARA GENERAR AUTOS.\n");
     }
     else
     {
-        getText("I N G R E S E   T I T U L O: ", "TITULO INGRESADO EXCEDE EL PERMITIDO.\n", list[indice].titulo, 50);
+        //validar alfanumerico
+        getAlpha("I N G R E S E   P A T E N T E: ", "PATENTE INGRESADO EXCEDE EL PERMITIDO.\n", list[indice].patente, 8);
         printf("\n________________________________________________________________\n\n");
-        printf("G E N E R O S\n");
-        mostrarGeneros(generos,tamGe);
-        list[indice].idGenero=getInt("I N G R E S E   G E N E R O: ", "SECTOR DEBE SER ENTRE 1 Y 5.\n", 1, 5);
+        printf("M A R C A S\n");
+        mostrarMarcas(marca,tamMar);
+        list[indice].idMarca=getInt("I N G R E S E   M A R C A: ", "SECTOR DEBE SER ENTRE 1000 Y 1004.\n", 1000,1004);
+        printf("C O L O R E S\n");
+        mostrarColores(colores, tamCo);
+        list[indice].idColor=getInt("I N G R E S E   C O L O R: ", "COLOR DEBE SER ENTRE 5000 Y 5004.\n", 5000, 5004);
         printf("\n________________________________________________________________\n\n");
-        getFecha(list, indice);
-        printf("A C T O R E S\n");
-        mostrarActores(actor, TAMAC);
-        list[indice].idActor=getInt("I N G R E S E   A C T O R: ", "ACTOR DEBE SER ENTRE 1000 Y 1009.\n", 1000, 1009);
-        printf("\n________________________________________________________________\n\n");
-        printf("PELICULA id %d GENERADA EXITOSAMENTE.\n", id);
+        list[indice].modeloAnio=getInt("INGRESE AÑO DEL MODELO: ", "AÑO DEBE SER ENTRE 1900 Y 2020.\n", 1900, 2020);
+
+        printf("AUTO id %d GENERADA EXITOSAMENTE.\n", id);
 
         list[indice].id=id;
         list[indice].isEmpty=OCUPADO;
@@ -70,7 +71,7 @@ int addPeliculas(ePeliculas list[], int tam, eActores actor[], int tamAc, eGener
  * \return int -1 si no pudo inicializar o 0 si lo logró.
  *
  */
-int initPeliculas(ePeliculas list[],int tam)
+int initautos(eAuto list[],int tam)
 {
     int retorno = -1;
     int i;
@@ -133,7 +134,7 @@ void getText(char texto[], char textoError[], char cadena[], int largo)
  * \return int 0 si no pudo lograr el objetivo o 1 si lo logró.
  *
  */
-int hayPelicula(ePeliculas list[], int tam)
+int hayauto(eAuto list[], int tam)
 {
     int retorno=0;
     int i;
@@ -170,16 +171,16 @@ int menu()
     printf("   )    )                                                       (    (\n");
     printf(" ,'   ,'             M E N U   D E   O P C I O N E S.            `.   `.\n");
     printf("(    (                                                             )    )\n");
-    printf(" `.   `.                   1)ALTA PELICULA.                      .'   .' \n");
-    printf("   )    )                                                      (    (\n");
-    printf(" ,'   ,'                   2)MODIFICAR PELICULA.                `.   `.\n");
-    printf("(    (                                                            )    )\n");
-    printf(" `.   `.                   3)BAJA PELICULA.                      .'   .' \n");
-    printf("   )    )                                                      (    (\n");
-    printf(" ,'   ,'                   4)ALTA ACTOR.                         `.   `.\n");
-    printf("(    (                     5)INFORMES.                            )    )\n");
-    printf(" `.   `.                   6)SALIR.                              .'   .' \n");
-    printf("   )    )       _       _       _       _       _       _       (    (\n");
+    printf(" `.   `.                   1)ALTA AUTO.                         .'   .' \n");
+    printf("   )    )                  2)MODIFICAR AUTO.                   (    (\n");
+    printf(" ,'   ,'                   3)BAJA AUTOS.                        `.   `.\n");
+    printf("(    (                     4)LISTAR AUTOS.                       )    )\n");
+    printf(" `.   `.                   5)LISTAR MARCAS                     .'   .' \n");
+    printf("   )    )                  6)LISTAR COLORES.                  (    (\n");
+    printf(" ,'   ,'                   7)LISTAR SERVICIOS                  `.   `.\n");
+    printf("(    (                     8)ALTA TRABAJO                        )    )\n");
+    printf(" `.   `.                   9)LISTAR  TRABAJOS.                 .'   .' \n");
+    printf("   )    )       _       _  10)SALIR    _       _      _       (    (\n");
     printf(" ,'   .' `.   .' `.   .' `.   .' `.   .' `.   .' `.   .' `.   .' `.   `.\n");
     printf("(    '  _  `-'  _  `-'  _  `-'  _  `-'  _  `-'  _  `-'  _  `-'  _  `    )\n");
     printf("`.   .' `.   .' `.   .' `.   .' `.   .' `.   .' `.   .' `.   .' `.   .'\n");
@@ -204,11 +205,11 @@ int menu()
  *
  * \param list[] Employee con el array a recorrer.
  * \param tam int con el tamaño del array a recorrer.
- * \param id int con el id de la pelicula cuyo indice se desea conocer.
+ * \param id int con el id de la auto cuyo indice se desea conocer.
  * \return int retorna -1 si no encontro el indice y el numero del indice si lo encontró.
  *
  */
-int buscarId(ePeliculas list[], int tam, int id)
+int buscarId(eAuto list[], int tam, int id)
 {
     int i;
     int retorno=-1;
@@ -245,13 +246,13 @@ int menuDos()
     printf("   )    )                                                       (    (\n");
     printf(" ,'   ,'       M E N U   D E   M O D I F I C A C I O N E S.      `.   `.\n");
     printf("(    (                                                             )    )\n");
-    printf(" `.   `.                   1)Modificar titulo.                   .'   .' \n");
+    printf(" `.   `.                   1)Modificar color.                   .'   .' \n");
     printf("   )    )                                                      (    (\n");
-    printf(" ,'   ,'                   2)Modificer actor.                   `.   `.\n");
+    printf(" ,'   ,'                   2)Modificer modelo.                  `.   `.\n");
     printf("(    (                                                            )    )\n");
-    printf(" `.   `.                   3)Modificar fecha.                  .'   .' \n");
+    printf(" `.   `.                   3)Volver al menu anterior.          .'   .' \n");
     printf("   )    )                                                      (    (\n");
-    printf(" ,'   ,'                   4)Volver al menu anterior.            `.   `.\n");
+    printf(" ,'   ,'                                                        `.   `.\n");
     printf("(    (                                                            )    )\n");
     printf(" `.   `.                                                         .'   .' \n");
     printf("   )    )       _       _       _       _       _       _       (    (\n");
@@ -282,27 +283,34 @@ int generarId()
 
     return id++;
 }
+
+
+int generarIdTrabajo()
+{
+    static int id=0;
+
+    return id++;
+}
 /**********************************************************************************************************/
 /** \brief obtine por pantall y valida una fecha
  *
- * \param pelicula[] con el arrray en donde se guardará la fecha
+ * \param auto[] con el arrray en donde se guardará la fecha
  * \param indice int con el indice en donde se guardará la fecha
  * \return void
  *
  */
-void getFecha(ePeliculas pelicula[], int indice)
+
+void getFecha(eTrabajo trabajo[], int indice)
 {
 
     int fecha;
 
-    fecha=getInt("INGRESE DIA DE ESTRENO: ", "DIA DEBE SER ENTRE 1 Y 31.\n", 1,31);
-    pelicula[indice].fechaEstreno.dia=fecha;
-    fecha=getInt("INGRESE MES DE ESTRENO: ", "MES DEBE SER ENTRE 1 Y 12.\n", 1,12);
-    pelicula[indice].fechaEstreno.mes=fecha;
-    fecha=getInt("INGRESE ANIO DE ESTRENO: ", "ANIO DEBE SER ENTRE 1900 Y 2019.\n", 1900,2019);
-    pelicula[indice].fechaEstreno.anio=fecha;
-
-
+    fecha=getInt("INGRESE DIA DE INGRESO: ", "DIA DEBE SER ENTRE 1 Y 31.\n", 1,31);
+    trabajo[indice].fecha.dia=fecha;
+    fecha=getInt("INGRESE MES DE INGRESO: ", "MES DEBE SER ENTRE 1 Y 12.\n", 1,12);
+    trabajo[indice].fecha.mes=fecha;
+    fecha=getInt("INGRESE ANIO DE INGRESO: ", "ANIO DEBE SER ENTRE 1900 Y 2019.\n", 1900,2019);
+    trabajo[indice].fecha.anio=fecha;
 
 }
 
@@ -406,7 +414,7 @@ char validarSeguir()
  * \return int -1 si no pudo lograr el objetivo o 0 si lo logró.
  *
  */
-int buscarLibre(ePeliculas list[],int tam)
+int buscarLibre(eAuto list[],int tam)
 {
     int retorno = -1;
     int i;
@@ -455,7 +463,7 @@ int esSoloLetras(char str[])
  * \return int -1 si no pudo lograr el objetivo o 0 si lo logró.
  *
  */
-int bajaPelicula(ePeliculas list[],int tam, int id)
+int bajaauto(eAuto list[],int tam, int id)
 {
     int retorno = -1;
     int i;
@@ -474,7 +482,7 @@ int bajaPelicula(ePeliculas list[],int tam, int id)
 /**********************************************************************************************************/
 /** \brief
  *
- * \param list ePeliculas con la pelicula a mostrar
+ * \param list eAuto con la auto a mostrar
  * \param generos[] eGenero con el array de generos
  * \param tamGe int con el tamaño del array
  * \param actor[] eActores con el array a recorrer
@@ -482,13 +490,13 @@ int bajaPelicula(ePeliculas list[],int tam, int id)
  * \return void
  *
  */
-void mostrarPelicula(ePeliculas list, eGenero generos[], int tamGe,eActores actor[], int TamAc)
+void mostrarauto(eAuto list, eColor colores[], int tamCo,eMarca marcas[], int tamMar)
 {
-    int idAct=list.idActor;
-    int indiceAct=buscarIndiceActor(actor, TamAc, idAct);
-    int idGen=list.idGenero;
-    int indiceGen=buscarIndiceGenero(generos, tamGe, idGen);
-    printf("%10d     %10s     %10s     %02d/%02d/%2d     %10s\n", list.id, list.titulo, generos[indiceGen].nombre, list.fechaEstreno.dia, list.fechaEstreno.mes, list.fechaEstreno.anio, actor[indiceAct].nombre );
+    int idMar=list.idMarca;
+    int indiceMar=buscarIndiceMarca(marcas, tamMar, idMar);
+    int idColor=list.idColor;
+    int indiceColor=buscarIndiceColor(colores, tamCo, idColor);
+    printf("%5d     %10s     %10s   %10s     %5d\n", list.id, list.patente, marcas[indiceMar].descripcion, colores[indiceColor].nombreColor, list.modeloAnio );
 }
 
 
@@ -501,6 +509,7 @@ void mostrarPelicula(ePeliculas list, eGenero generos[], int tamGe,eActores acto
  * \return int retorna -1 si no pudo dar de alta y 0 si lo logro
  *
  */
+ /*
 int altaActor(eActores actores[], int tamAc)
 {
     static int id=100;
@@ -520,54 +529,9 @@ int altaActor(eActores actores[], int tamAc)
 
     }
     return retorno;
-}
+}*/
 
 /**********************************************************************************************************/
-
-/** \brief Recorre un array para verificar si al menos hay un registro ocupado,
- *
- * \param list[]  con el array a recorrer.
- * \param tam int con el tamaño del array a recorrer.
- * \return int 0 si no pudo lograr el objetivo o 1 si lo logró.
- *
- */
-int hayActor(eActores actores[], int tamAc)
-{
-    int retorno=0;
-    int i;
-    for(i=0; i<tamAc; i++)
-    {
-        if(actores[i].isEmpty==OCUPADO)
-        {
-            retorno=1;
-            break;
-        }
-    }
-
-    return retorno;
-}
-
-/** \brief inicializa el array de actores
- *
- * \param actores[] eActores con el array a inicializar
- * \param tamAc int con el tamaño del array
- * \return int retorna -1 si no lo logro y 0 si logró el objetivo
- *
- */
-int initActores(eActores actores[], int tamAc)
-{
-    int retorno=-1;
-    int i;
-    for(i=0; i<tamAc; i++)
-    {
-    actores[i].isEmpty==VACIO;
-
-
-
-    }
-        retorno=0;
-    return retorno;
-}
 
 /** \brief
  *
@@ -576,14 +540,14 @@ int initActores(eActores actores[], int tamAc)
  * \return void
  *
  */
-void mostrarGeneros(eGenero genero[], int tamGe)
+void mostrarMarcas(eMarca marcas[], int tamMar)
 {
     int i;
     printf("\n________________________________________________________________\n\n");
-    printf("ID GENERO  -  DESCRIPCION\n\n");
-    for(i=0; i<tamGe; i++)
+    printf("ID        -  DESCRIPCION\n\n");
+    for(i=0; i<tamMar; i++)
     {
-        printf("%5d         %10s\n", genero[i].id, genero[i].nombre);
+        printf("%5d         %10s\n", marcas[i].id, marcas[i].descripcion);
     }
 
 
@@ -597,14 +561,14 @@ void mostrarGeneros(eGenero genero[], int tamGe)
  * \return int
  *
  */
-int buscarIndiceGenero(eGenero generos[], int tamGe, int id)
+int buscarIndiceColor(eColor colores[], int tamCo, int id)
 {
     int indice;
     int i;
 
-    for(i =0; i<tamGe; i++)
+    for(i =0; i<tamCo; i++)
     {
-        if(generos[i].id == id)
+        if(colores[i].id == id)
         {
             indice=i;
         }
@@ -613,24 +577,7 @@ int buscarIndiceGenero(eGenero generos[], int tamGe, int id)
     return indice;
 }
 
-/** \brief
- *
- * \param actor[] eActores
- * \param tamAc int
- * \return void
- *
- */
-void mostrarActores(eActores actor[], int tamAc)
-{
-    int i;
-    printf("\n________________________________________________________________\n\n");
-    printf("ID ACTOR  -  NOMBRE -  NACIONALIDAD\n\n");
-    for(i=0; i<tamAc; i++)
-    {
-        printf("%5d         %10s         %10s\n", actor[i].id, actor[i].nombre, actor[i].pais);
-    }
 
-}
 
 /** \brief
  *
@@ -640,14 +587,14 @@ void mostrarActores(eActores actor[], int tamAc)
  * \return int
  *
  */
-int buscarIndiceActor(eActores actor[], int TamAc, int id)
+int buscarIndiceMarca(eMarca marca[], int tamMar, int id)
 {
     int indice;
     int i;
 
-    for(i =0; i<TamAc; i++)
+    for(i =0; i<tamMar; i++)
     {
-        if(actor[i].id == id)
+        if(marca[i].id == id)
         {
             indice=i;
         }
@@ -656,3 +603,209 @@ int buscarIndiceActor(eActores actor[], int TamAc, int id)
     return indice;
 }
 
+
+void mostrarColores(eColor colores[], int tamCo)
+{
+    int i;
+    printf("\n________________________________________________________________\n\n");
+    printf("ID    -      COLOR\n");
+    for(i=0; i<tamCo; i++)
+    {
+        printf("%5d         %10s\n", colores[i].id, colores[i].nombreColor);
+    }
+
+
+}
+
+/**********************************************************************************************************/
+
+/** \brief Solicita un texto por pantalla al usuario y lo valida.
+ *
+ * \param texto[] char con el mensaje a mostrar para solicitar el dato por pantalla.
+ * \param textoError[] char con el mensaje a mostrar en caso de error.
+ * \param cadena[] char con la cadena en donde se guardará el texto.
+ * \param largo int con el tamaño de la cadena en donde se guardará el texto.
+ * \return void
+ *
+ */
+void getAlpha(char texto[], char textoError[], char cadena[], int largo)
+{
+    char auxChar[100];
+    printf("\n________________________________________________________________\n\n");
+    printf("\n%s", texto);
+    fflush(stdin);
+    gets(auxChar);
+    while(esAlfa(auxChar)==0)
+    {
+        printf("\n________________________________________________________________\n\n");
+        printf("\nSOLO DEBE INGRESAR ALFANUMERICOS, REINTENTE: ");
+        fflush(stdin);
+        gets(auxChar);
+
+    }
+    while(strlen(auxChar)>= largo)
+    {
+        printf("\n________________________________________________________________\n\n");
+        printf("\n%s", texto);
+        printf("\n%s", textoError);
+        gets(auxChar);
+
+    }
+    strcpy(cadena, auxChar);
+
+
+
+
+}
+
+
+
+/**********************************************************************************************************/
+
+/** \brief valida que la cadena que recibe solo contenga numeros.
+ *
+ * \param str[] char con la cadena a validar.
+ * \return int retorna 0 si no es solo numeros o 1 si es solo numeros.
+ *
+ */
+int esAlfa(char str[])
+{
+    int i=0;
+    while(str[i] != '\0')
+    {
+        if((str[i] < '0' || str[i] > '9') && (str[i] < 'a' || str[i] > 'z') && (str[i] < 'A' || str[i] > 'Z') && str[i] != ' ')
+            return 0;
+        i++;
+    }
+    return 1;
+}
+
+int addTrabajo(eAuto list[], int tam, eMarca marca[], int tamMar, eColor colores[], int tamCo, eServicio servicio[], int tamSer, eTrabajo trabajo[], int tamTra)
+{
+    int retorno=-1;
+    int id=generarIdTrabajo();
+    int indice=buscarLibreT(trabajo, tamTra);
+    char patente [8];
+    int idServicio;
+    int i;
+    printf("SELECCIONE UN AUTO: ");
+    for(i = 0; i< tam; i++)
+    {
+        mostrarauto(list[i], colores, tamCo, marca, tamMar);
+    }
+
+
+    printf("Ingrese la patente del auto: ");
+    fflush(stdin);
+    scanf("%s", patente);
+
+    while(buscarIdPatente(list, tam, patente)==-1)
+    {
+        printf("La patente ingresada no corresponde a ningun auto existente.\n");
+        printf("SELECCIONE UN AUTO: ");
+        printf("Ingrese la patente del auto: ");
+        fflush(stdin);
+        scanf("%s", patente);
+    }
+    strcpy(trabajo[indice].patente, patente);
+
+    //mostrarServicio(servicio, tamSer);
+    idServicio=getInt("Ingrese el id del servicio a cargar: ", "El id debe ser entre 20000 y 20003", 200001, 20003);
+
+    trabajo[indice].idServicio=idServicio;
+
+    getFecha(trabajo, indice);
+
+    trabajo[indice].id=id;
+
+    retorno=0;
+
+    return retorno;
+
+
+
+}
+
+
+int buscarIdPatente(eAuto list[], int tam, char patente[])
+{
+    int indice=-1;
+    int i;
+
+    for(i =0; i<tam; i++)
+    {
+        if(stricmp(list[i].patente, patente)==0)
+        {
+            indice=i;
+        }
+    }
+
+    return indice;
+}
+
+
+void mostrarServicio(eServicio servicio[], int tamSer)
+{
+    int i;
+    printf("\n________________________________________________________________\n\n");
+    printf("ID        -  DESCRIPCION    - PRECIO\n\n");
+    for(i=0; i<tamSer; i++)
+    {
+        printf("%5d         %10s        %.2f\n", servicio[i].id, servicio[i].descricion, servicio[i].precio);
+    }
+
+
+}
+
+int buscarLibreT(eTrabajo trabajo[],int tam)
+{
+    int retorno = -1;
+    int i;
+
+        for(i=0; i<tam; i++)
+        {
+            if(trabajo[i].isEmpty == VACIO)
+            {
+                retorno = i;
+                break;
+            }
+        }
+
+    return retorno;
+}
+
+void listarXmarcaYpatente(eAuto list[], int tam, eMarca marca[], int tamMar, eColor color[], int tamCo, eAuto aux)
+{
+    int i, j;
+
+    for(i=0; i<tam-1; i++)
+    {
+        if(list[i].isEmpty==OCUPADO)
+        {
+            for(j=i+1; j<tam; j++)
+        {
+            if(list[i].idMarca > list[j].idMarca)
+            {
+                aux=list[i];
+                list[i]=list[j];
+                list[j]=aux;
+            }
+        }
+
+        }
+
+    }
+
+    for(i=0; i<tam; i++)
+    {
+        mostrarauto(list[i], color, tamCo, marca, tamMar);
+    }
+
+}
+
+void mostarTrabajo(eTrabajo trabajo)
+{
+    /*char idPatente[8]=trabajo.patente;
+    int indicePatente=buscarIdPatente(list,tam, patente);*/
+    printf("%d    - %10s     - %d    - %d/%d/%d", trabajo.id, trabajo.patente, trabajo.idServicio, trabajo.fecha.dia, trabajo.fecha.mes, trabajo.fecha.anio );
+}
