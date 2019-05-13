@@ -369,6 +369,30 @@ int generarIdTrabajo()
     return id++;
 }
 
+/** \brief busca un registro en el array que este activo
+ *
+ * \param trabajo[] eTrabajo con el array a recorrer
+ * \param tamTra int con el tamaño del array a recorrer
+ * \return int retorna 1 si encontro un registro activo o 0 si no encontró.
+ *
+ */
+int hayTrabajo(eTrabajo trabajo[], int tamTra)
+{
+    int retorno=0;
+    int i;
+    for(i=0; i<tamTra; i++)
+    {
+        if(trabajo[i].isEmpty==OCUPADO)
+        {
+            retorno=1;
+            break;
+        }
+    }
+
+    return retorno;
+}
+
+
 /** \brief inicializa un array
  *
  * \param trabajo[] eTrabajo con el array a inicializar

@@ -16,7 +16,7 @@
 
 int main()
 {
-    eAuto list[TAM]=
+    eAuto list[TAM]; /*=
     {
         {1000, "QWE 113", 1000, 5000, 1999, 1},
         {1001, "ZWE 143", 1001, 5004, 2000, 1},
@@ -24,10 +24,10 @@ int main()
         {1003, "TWE 723", 1000, 5002, 1999, 1},
         {1004, "GWE 823", 1004, 5003, 1999, 1},
         {1005, "IHE 923", 1001, 5000, 1999, 1}
-    };
+    };*/
 
     eAuto aux;
-    eTrabajo trabajo[TAMTRA]=
+    eTrabajo trabajo[TAMTRA]; /*=
 {
     {0, "QWE 113", 20000, {02, 05, 2019}, 1},
     {1, "ZWE 143", 20001, {03, 05, 2019}, 1},
@@ -35,7 +35,7 @@ int main()
     {3, "TWE 723", 20000, {06, 05, 2019}, 1},
     {4, "GWE 823", 20002, {07, 05, 2019}, 1},
     {5, "IHE 923", 20001, {07, 05, 2019}, 0}
-};
+};*/
 
     eColor colores[TAMCO]=
     {
@@ -74,8 +74,8 @@ int main()
     int indice;
     char patente[8];
 
-    //initAutos(list,TAM);
-    //initTrabajo(trabajo, TAMTRA);
+    initAutos(list,TAM);
+    initTrabajo(trabajo, TAMTRA);
 
     do
     {
@@ -245,9 +245,17 @@ int main()
             seguir=validarSeguir();
             break;
         case 4:
-
+            system("cls");
+            if(hayAuto(list,TAM )==0 )
+            {
+                printf("Para listar autos, primero debe dar de alta algun auto.\n");
+                system("pause");
+            }else
+            {
                 printf("ID          PATENTE         MARCA        COLOR       MODELO\n");
                 listarXmarcaYpatente(list, TAM, marcas, TAMMAR, colores, TAMCO,aux ) ;
+            }
+
             seguir=validarSeguir();
             break;
 
@@ -287,7 +295,15 @@ int main()
             break;
         case 9:
             system("cls");
-            mostrarTrabajos(trabajo, TAMTRA, list, TAM, servicio,TAMSER);
+            if(hayTrabajo(trabajo, TAMTRA)== 0)
+            {
+                printf("PARA LISTAR TRABAJOS PRIMERO DEBE DAR DE ALTA \n");
+            }
+            else
+            {
+              mostrarTrabajos(trabajo, TAMTRA, list, TAM, servicio,TAMSER);
+            }
+
 
             seguir=validarSeguir();
             break;

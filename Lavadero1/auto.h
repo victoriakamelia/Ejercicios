@@ -64,6 +64,7 @@ void mostrarAutos(eAuto list[], int tam, eMarca marcas[], int tamMar, eColor col
 int addTrabajo(eAuto list[], int tam, eMarca marca[], int tamMar, eColor colores[], int tamCo, eServicio servicio[], int tamSer, eTrabajo trabajo[], int tamTra);
 int buscarLibreT(eTrabajo trabajo[],int tam);
 int generarIdTrabajo();
+int hayTrabajo(eTrabajo trabajo[], int tamTra);
 int initTrabajo(eTrabajo trabajo[],int tamTra);
 
 void getFecha(eTrabajo trabajo[], int indice);
