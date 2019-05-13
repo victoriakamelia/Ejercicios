@@ -1,0 +1,32 @@
+# depslib dependency file v1.0
+1557771247 source:c:\users\administrator\desktop\lavadero1\auto.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+
+1557771247 c:\users\administrator\desktop\lavadero1\utn.h
+
+1557771247 c:\users\administrator\desktop\lavadero1\auto.h
+
+1557772724 source:c:\users\administrator\desktop\lavadero1\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"utn.h"
+	"auto.h"
+
+1557771274 source:c:\users\administrator\desktop\lavadero1\utn.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdio.h>
+	<ctype.h>
+	"auto.h"
+	"utn.h"
+
