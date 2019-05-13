@@ -1,0 +1,8 @@
+# depslib dependency file v1.0
+1557255340 source:d:\modelo parcial\harcodeadoalmuerzoabm\main.c
+	<stdio.h>
+	<stdlib.h>
+	<ctype.h>
+	<conio.h>
+	<string.h>
+

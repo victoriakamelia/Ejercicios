@@ -1,0 +1,268 @@
+# depslib dependency file v1.0
+1557694764 source:c:\users\marcelo\desktop\parcial_1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+	"trabajo.h"
+	"validaciones.h"
+
+1557694059 c:\users\marcelo\desktop\parcial_1g\auto.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"marca.h"
+	"color.h"
+
+1557693995 source:c:\users\marcelo\desktop\parcial_1g\auto.c
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557692664 source:c:\users\marcelo\desktop\parcial_1g\marca.c
+	"marca.h"
+
+1557694158 c:\users\marcelo\desktop\parcial_1g\marca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557692813 source:c:\users\marcelo\desktop\parcial_1g\color.c
+	"color.h"
+
+1557694256 c:\users\marcelo\desktop\parcial_1g\color.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557693020 source:c:\users\marcelo\desktop\parcial_1g\servicio.c
+	"servicio.h"
+
+1557694340 c:\users\marcelo\desktop\parcial_1g\servicio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557694737 c:\users\marcelo\desktop\parcial_1g\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"trabajo.h"
+
+1557694552 c:\users\marcelo\desktop\parcial_1g\trabajo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+
+1557695499 source:c:\users\marcelo\desktop\parcial_1g\trabajo.c
+	"trabajo.h"
+	"servicio.h"
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557693478 source:c:\users\marcelo\desktop\parcial_1g\validaciones.c
+	"validaciones.h"
+	"trabajo.h"
+
+1557758485 source:c:\users\marcelo\desktop\parcial_1g - copia\auto.c
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557758510 c:\users\marcelo\desktop\parcial_1g - copia\auto.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"marca.h"
+	"color.h"
+
+1557757870 c:\users\marcelo\desktop\parcial_1g - copia\marca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557757870 c:\users\marcelo\desktop\parcial_1g - copia\color.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557694737 c:\users\marcelo\desktop\parcial_1g - copia\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"trabajo.h"
+
+1557757870 c:\users\marcelo\desktop\parcial_1g - copia\trabajo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+
+1557757870 c:\users\marcelo\desktop\parcial_1g - copia\servicio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557692813 source:c:\users\marcelo\desktop\parcial_1g - copia\color.c
+	"color.h"
+
+1557759259 source:c:\users\marcelo\desktop\parcial_1g - copia\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+	"trabajo.h"
+	"validaciones.h"
+
+1557692664 source:c:\users\marcelo\desktop\parcial_1g - copia\marca.c
+	"marca.h"
+
+1557693020 source:c:\users\marcelo\desktop\parcial_1g - copia\servicio.c
+	"servicio.h"
+
+1557759505 source:c:\users\marcelo\desktop\parcial_1g - copia\trabajo.c
+	"trabajo.h"
+	"servicio.h"
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557759505 source:c:\users\marcelo\desktop\parcial_1g - copia\validaciones.c
+	"validaciones.h"
+	"trabajo.h"
+
+1557758486 source:e:\entregar\harcodeado\parcial_1g\auto.c
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557758512 e:\entregar\harcodeado\parcial_1g\auto.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"marca.h"
+	"color.h"
+
+1557757872 e:\entregar\harcodeado\parcial_1g\marca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557757872 e:\entregar\harcodeado\parcial_1g\color.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557694738 e:\entregar\harcodeado\parcial_1g\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"trabajo.h"
+
+1557759764 e:\entregar\harcodeado\parcial_1g\trabajo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+
+1557757872 e:\entregar\harcodeado\parcial_1g\servicio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557692814 source:e:\entregar\harcodeado\parcial_1g\color.c
+	"color.h"
+
+1557692666 source:e:\entregar\harcodeado\parcial_1g\marca.c
+	"marca.h"
+
+1557693022 source:e:\entregar\harcodeado\parcial_1g\servicio.c
+	"servicio.h"
+
+1557760268 source:e:\entregar\harcodeado\parcial_1g\trabajo.c
+	"trabajo.h"
+	"servicio.h"
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557759506 source:e:\entregar\harcodeado\parcial_1g\validaciones.c
+	"validaciones.h"
+	"trabajo.h"
+
+1557759770 source:e:\entregar\harcodeado\parcial_1g\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+	"trabajo.h"
+	"validaciones.h"
+
