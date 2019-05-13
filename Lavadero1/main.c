@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -35,7 +34,7 @@ int main()
     {2, "RWE 623", 20003, {05, 05, 2019}, 1},
     {3, "TWE 723", 20000, {06, 05, 2019}, 1},
     {4, "GWE 823", 20002, {07, 05, 2019}, 1},
-    {5, "IHE 923", 20001, {07, 05, 2019}, 1}
+    {5, "IHE 923", 20001, {07, 05, 2019}, 0}
 };
 
     eColor colores[TAMCO]=
@@ -270,7 +269,16 @@ int main()
         case 8:
             if(hayAuto(list, TAM)==1)
             {
-               addTrabajo(list, TAM, marcas, TAMMAR, colores, TAMCO, servicio, TAMSER, trabajo, TAMTRA);
+                if(buscarLibreT(trabajo, TAMTRA)==-1)
+                {
+                    printf("NO HAY MAS LUGAR PARA CARGAR TRABAJOS \n") ;
+                    system("pause");
+                }else
+                {
+                    addTrabajo(list, TAM, marcas, TAMMAR, colores, TAMCO, servicio, TAMSER, trabajo, TAMTRA);
+
+                }
+
             }else
             {
                 printf("PARA DAR DE ALTA TRABAJO PRIMERO DEBE DAR DE ALTA ALGUN AUTO.\n");
