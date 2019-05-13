@@ -1,5 +1,13 @@
 #include "color.h"
 
+
+/** \brief lista los colores
+ *
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void listarColores(eColor col[], int tamCol)
 {
     printf(" ID   Descripcion\n");
@@ -12,6 +20,13 @@ void listarColores(eColor col[], int tamCol)
 }
 
 
+/** \brief harcodea los colores
+ *
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void harcodeColores(eColor col[], int tamCol)
 {
     eColor hardcode[]=
@@ -31,6 +46,15 @@ void harcodeColores(eColor col[], int tamCol)
 }
 
 
+/** \brief obtiene la descripcion del color segun su id, recorriendo toda la cadena
+ *
+ * \param col[] eColor
+ * \param tamCol int
+ * \param idColor int
+ * \param cadena[] char
+ * \return void
+ *
+ */
 void obtenerColor(eColor col[], int tamCol, int idColor, char cadena[])
 {
     for(int i=0; i<tamCol; i++)

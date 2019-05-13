@@ -44,5 +44,5 @@ int buscarTrabajo(eTrabajo tra[], int tamTra, int idTrabajo);
 void altaTrabajo(eTrabajo tra[], int tamTra, eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol, eServicio serv[], int tamServ);
 void mostrarTrabajo(eTrabajo tra, eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol, eServicio serv[], int tamServ);
 void mostrarTrabajos(eTrabajo tra[], int tamTra, eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol, eServicio serv[], int tamServ);
-void harcodeAutos(eAuto aut[], int tamAut);
+void harcodeTrabajos(eTrabajo tra[],int tamTra);
 #endif // TRABAJO_H_INCLUDED

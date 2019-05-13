@@ -266,3 +266,92 @@
 	"trabajo.h"
 	"validaciones.h"
 
+1557782019 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\auto.c
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557782052 c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\auto.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"marca.h"
+	"color.h"
+
+1557757872 c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\marca.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557757872 c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\color.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557694738 c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\validaciones.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"trabajo.h"
+
+1557782128 c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\trabajo.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+
+1557757872 c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\servicio.h
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+
+1557692814 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\color.c
+	"color.h"
+
+1557759770 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	<conio.h>
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"servicio.h"
+	"trabajo.h"
+	"validaciones.h"
+
+1557692666 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\marca.c
+	"marca.h"
+
+1557693022 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\servicio.c
+	"servicio.h"
+
+1557781298 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\trabajo.c
+	"trabajo.h"
+	"servicio.h"
+	"auto.h"
+	"marca.h"
+	"color.h"
+	"validaciones.h"
+
+1557759506 source:c:\users\administrator\desktop\123456\ailen\parcial_1g.ailen\validaciones.c
+	"validaciones.h"
+	"trabajo.h"
+

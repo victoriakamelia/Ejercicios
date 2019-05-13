@@ -1,5 +1,12 @@
 #include "marca.h"
 
+/** \brief harcodea las marcas
+ *
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \return void
+ *
+ */
 void harcodeMarcas(eMarca mar[], int tamMar)
 {
     eMarca hardcode[]=
@@ -17,6 +24,13 @@ void harcodeMarcas(eMarca mar[], int tamMar)
     }
 }
 
+/** \brief lista las marcas
+ *
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \return void
+ *
+ */
 void listarMarcas(eMarca mar[], int tamMar)
 {
     printf(" ID   Descripcion\n");
@@ -28,6 +42,15 @@ void listarMarcas(eMarca mar[], int tamMar)
     }
 }
 
+/** \brief obtiene la descripcion de la marca segun su ID, recorriendo toda la cadena
+ *
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param idMarca int
+ * \param cadena[] char
+ * \return void
+ *
+ */
 void ObtenerMarcas(eMarca mar[], int tamMar, int idMarca, char cadena[])
 {
     for(int i=0; i<tamMar; i++)

@@ -4,6 +4,13 @@
 #include "validaciones.h"
 
 
+/** \brief inicializa a los empleados
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \return void
+ *
+ */
 void inicializarAutos(eAuto aut[], int tamAut)
 {
     for(int i=0; i < tamAut; i++)
@@ -13,6 +20,12 @@ void inicializarAutos(eAuto aut[], int tamAut)
 }
 
 
+
+/** \brief muestra las opciones al usuario
+ *
+ * \return int
+ *
+ */
 int menu()
 {
     int opcion;
@@ -55,6 +68,14 @@ int menu()
     return opcion;
 }
 
+
+/** \brief busca espacio libre, y lo devuelve si esta vacio, si no, salta un mensaje de error
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \return int
+ *
+ */
 int buscarLibreAuto(eAuto aut[], int tamAut)
 {
 
@@ -74,6 +95,14 @@ int buscarLibreAuto(eAuto aut[], int tamAut)
 
 
 
+/** \brief permite encontrar un auto mediante su ID
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param idAuto int
+ * \return int
+ *
+ */
 int buscarAuto(eAuto aut[], int tamAut, int idAuto)
 {
 
@@ -92,6 +121,14 @@ int buscarAuto(eAuto aut[], int tamAut, int idAuto)
 }
 
 
+/** \brief permite encontrar una patente comparando con el ingresado
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param idPatente[] int
+ * \return int
+ *
+ */
 int buscarPatente(eAuto aut[], int tamAut, int idPatente[])
 {
 
@@ -109,6 +146,17 @@ int buscarPatente(eAuto aut[], int tamAut, int idPatente[])
     return indice;
 }
 
+/** \brief ingresa los datos del auto a dar de alta
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void altaAutos(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 {
     char patente[6];
@@ -199,6 +247,16 @@ void altaAutos(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], 
 }
 
 
+/** \brief muestra los datos de un auto
+ *
+ * \param aut eAuto
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void mostrarAuto(eAuto aut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 {
     char marca[20];
@@ -228,6 +286,17 @@ void mostrarAuto(eAuto aut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 
 
 
+/** \brief muestra los datos de todos los autos mediante un recorrido de todo el array
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void mostrarAutos(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 {
     int flag = 0;
@@ -253,6 +322,17 @@ void mostrarAutos(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[
     }
 }
 
+/** \brief da de baja un auto, segun su patente
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void bajaAuto(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 {
 
@@ -300,6 +380,17 @@ void bajaAuto(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], i
     }
 
 
+/** \brief modifica los valores a elegir por parte del usuario
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void ModificacionAuto(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 {
 
@@ -416,6 +507,17 @@ void ModificacionAuto(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor 
 
 }
 
+/** \brief lista los autos por marca y patente
+ *
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \return void
+ *
+ */
 void listarAutos(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol)
 {
    eAuto aux;
@@ -442,6 +544,13 @@ void listarAutos(eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[]
    mostrarAutos(aut,tamAut,mar,tamMar,col,tamCol);
 
 }
+/** \brief harcodea datos de los autos
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
 
 void harcodeAutos(eAuto aut[], int tamAut)
 {

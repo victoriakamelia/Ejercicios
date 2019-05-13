@@ -1,5 +1,12 @@
 #include "servicio.h"
 
+/** \brief harcodea los servicios
+ *
+ * \param serv[] eServicio
+ * \param tamServ int
+ * \return void
+ *
+ */
 void harcodeServicios(eServicio serv[], int tamServ)
 {
     eServicio hardcode[]=
@@ -17,6 +24,13 @@ void harcodeServicios(eServicio serv[], int tamServ)
     }
 }
 
+/** \brief lista los servicios
+ *
+ * \param serv[] eServicio
+ * \param tamServ int
+ * \return void
+ *
+ */
 void listarServicios(eServicio serv[], int tamServ)
 {
     printf(" ID   Descripcion   Importe\n");
@@ -28,6 +42,15 @@ void listarServicios(eServicio serv[], int tamServ)
     }
 }
 
+/** \brief obtiene la descripcion de servicios segun su ID, recorriendo toda la cadena
+ *
+ * \param serv[] eServicio
+ * \param tamServ int
+ * \param idServicio int
+ * \param cadena[] char
+ * \return void
+ *
+ */
 void ObtenerServicios(eServicio serv[], int tamServ, int idServicio, char cadena[])
 {
     for(int i=0; i<tamServ; i++)

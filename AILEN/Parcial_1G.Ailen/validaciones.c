@@ -1,6 +1,12 @@
 #include "validaciones.h"
 #include "trabajo.h"
 
+
+/** \brief carga el id incrementalmente
+ *
+ * \return int
+ *
+ */
 int cargarId()
 {
     static int id = 7;
@@ -10,6 +16,11 @@ int cargarId()
 }
 
 
+/** \brief carga el id trabajo incrementalmente
+ *
+ * \return int
+ *
+ */
 int cargarIdTrabajo()
 {
     static int id1 = 3010;
@@ -19,6 +30,11 @@ int cargarIdTrabajo()
 }
 
 
+/** \brief pregunta si desea continuar
+ *
+ * \return char
+ *
+ */
 char validarSeguir()
 {
     char seguir;
@@ -40,6 +56,13 @@ char validarSeguir()
     return seguir;
 }
 
+/** \brief compara que las fechas sean iguales
+ *
+ * \param
+ * \param
+ * \return
+ *
+ */
 
 int compararFechas(eFecha fech, eFecha fecha)
 {
@@ -53,6 +76,12 @@ int compararFechas(eFecha fech, eFecha fecha)
 }
 
 
+/** \brief recorre la cadena buscando que cada uno de sus chars sea igual a positivo o cero
+ *
+ * \param entero[] char
+ * \return int
+ *
+ */
 int validarEntero(char entero[])
 {
     int entero1;

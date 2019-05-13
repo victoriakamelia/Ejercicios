@@ -5,6 +5,13 @@
 #include "color.h"
 #include "validaciones.h"
 
+/** \brief harcodea trabajos
+ *
+ * \param tra[] eTrabajo
+ * \param tamTra int
+ * \return void
+ *
+ */
 void harcodeTrabajos(eTrabajo tra[], int tamTra)
 {
     eTrabajo hardcode[]=
@@ -33,6 +40,13 @@ void harcodeTrabajos(eTrabajo tra[], int tamTra)
 }
 
 
+/** \brief inicializa los trabajos
+ *
+ * \param tra[] eTrabajo
+ * \param tamTra int
+ * \return void
+ *
+ */
 void inicializarTrabajo(eTrabajo tra[], int tamTra)
 {
 
@@ -44,6 +58,13 @@ void inicializarTrabajo(eTrabajo tra[], int tamTra)
 
 
 
+/** \brief busca espacio libre, y lo devuelve si esta vacio, si no, salta un mensaje de error
+ *
+ * \param tra[] eTrabajo
+ * \param tamTra int
+ * \return int
+ *
+ */
 int buscarLibreTrabajo(eTrabajo tra[], int tamTra)
 {
 
@@ -62,6 +83,14 @@ int buscarLibreTrabajo(eTrabajo tra[], int tamTra)
 
 
 
+/** \brief permite encontrar un trabajo mediante su ID
+ *
+ * \param tra[] eTrabajo
+ * \param tamTra int
+ * \param idTrabajo int
+ * \return int
+ *
+ */
 int buscarTrabajo(eTrabajo tra[], int tamTra, int idTrabajo)
 {
     int indice= -1;
@@ -81,6 +110,21 @@ int buscarTrabajo(eTrabajo tra[], int tamTra, int idTrabajo)
 
 
 
+/** \brief ingresa los datos del trabajo a dar de alta
+ *
+ * \param tra[] eTrabajo
+ * \param tamTra int
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \param serv[] eServicio
+ * \param tamServ int
+ * \return void
+ *
+ */
 void altaTrabajo(eTrabajo tra[], int tamTra, eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol, eServicio serv[], int tamServ)
 {
     char patente[6];
@@ -184,6 +228,20 @@ void altaTrabajo(eTrabajo tra[], int tamTra, eAuto aut[], int tamAut, eMarca mar
 }
 
 
+/** \brief muestra datos de un trabajo
+ *
+ * \param tra eTrabajo
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \param serv[] eServicio
+ * \param tamServ int
+ * \return void
+ *
+ */
 void mostrarTrabajo(eTrabajo tra, eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol, eServicio serv[], int tamServ)
 {
     char marca[20];
@@ -224,6 +282,21 @@ void mostrarTrabajo(eTrabajo tra, eAuto aut[], int tamAut, eMarca mar[], int tam
 
 
 
+/** \brief muestra los datos de todos los trabajos mediante un recorrido de todo el array
+ *
+ * \param tra[] eTrabajo
+ * \param tamTra int
+ * \param aut[] eAuto
+ * \param tamAut int
+ * \param mar[] eMarca
+ * \param tamMar int
+ * \param col[] eColor
+ * \param tamCol int
+ * \param serv[] eServicio
+ * \param tamServ int
+ * \return void
+ *
+ */
 void mostrarTrabajos(eTrabajo tra[], int tamTra, eAuto aut[], int tamAut, eMarca mar[], int tamMar, eColor col[], int tamCol, eServicio serv[], int tamServ)
 {
     int flag = 0;

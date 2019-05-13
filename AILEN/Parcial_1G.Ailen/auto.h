@@ -28,6 +28,7 @@ typedef struct
 
 } eAuto;
 
+
 void inicializarAutos(eAuto aut[], int tamAut);
 int menu();
 int buscarLibreAuto(eAuto aut[], int tamAut);
