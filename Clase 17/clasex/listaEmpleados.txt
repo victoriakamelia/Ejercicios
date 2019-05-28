@@ -1,0 +1,2 @@
+ID      NOMBRE      APELLIDO     SALARIO
+23           qw           qw   123323.00
