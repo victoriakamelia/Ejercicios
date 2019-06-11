@@ -33,7 +33,7 @@ int main()
 
         }
     }while(option != 10);*/
-    /* Harcodeo 3 empleados
+    // Harcodeo 3 empleados
     Employee* emp1 = employee_newParametros("1234", "Juan", "234", "25000");
     Employee* emp2 = employee_newParametros("2222", "Julia", "100", "15000");
     Employee* emp3 = employee_newParametros("1111", "Juana", "340", "35000");
@@ -109,7 +109,7 @@ int main()
 
 
 
-*/
+
 
 
 
