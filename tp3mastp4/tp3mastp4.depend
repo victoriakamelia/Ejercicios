@@ -1,0 +1,56 @@
+# depslib dependency file v1.0
+1561404709 source:c:\users\administrator\desktop\tp3mastp4\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"parser.h"
+	"funciones.h"
+	"controller.h"
+
+1561404709 c:\users\administrator\desktop\tp3mastp4\linkedlist.h
+
+1561404709 c:\users\administrator\desktop\tp3mastp4\employee.h
+
+1561404709 c:\users\administrator\desktop\tp3mastp4\parser.h
+
+1561404709 c:\users\administrator\desktop\tp3mastp4\funciones.h
+
+1561404709 c:\users\administrator\desktop\tp3mastp4\controller.h
+
+1561404709 source:c:\users\administrator\desktop\tp3mastp4\employee.c
+	"Employee.h"
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"funciones.h"
+
+1561404709 source:c:\users\administrator\desktop\tp3mastp4\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"funciones.h"
+
+1561404709 source:c:\users\administrator\desktop\tp3mastp4\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"Employee.h"
+	"funciones.h"
+
+1561404709 source:c:\users\administrator\desktop\tp3mastp4\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Employee.h"
+	"funciones.h"
+	"Controller.h"
+
+1561404729 source:c:\users\administrator\desktop\tp3mastp4\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
