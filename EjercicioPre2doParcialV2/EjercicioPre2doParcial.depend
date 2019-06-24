@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1554991592 source:c:\users\administrator\downloads\labprog1consolidado-master\misparciales\ejerciciopre2doparcialv2\empleado.c
+	"Empleado.h"
+
+1554991592 c:\users\administrator\downloads\labprog1consolidado-master\misparciales\ejerciciopre2doparcialv2\empleado.h
+
+1554991592 source:c:\users\administrator\downloads\labprog1consolidado-master\misparciales\ejerciciopre2doparcialv2\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+
+1554991592 c:\users\administrator\downloads\labprog1consolidado-master\misparciales\ejerciciopre2doparcialv2\linkedlist.h
+
+1561406920 source:c:\users\administrator\downloads\labprog1consolidado-master\misparciales\ejerciciopre2doparcialv2\main.c
+	<stdio.h>
+	<stdlib.h>
+	"Empleado.h"
+	"LinkedList.h"
+	"Parser.h"
+
+1554991592 c:\users\administrator\downloads\labprog1consolidado-master\misparciales\ejerciciopre2doparcialv2\parser.h
+	"LinkedList.h"
+
