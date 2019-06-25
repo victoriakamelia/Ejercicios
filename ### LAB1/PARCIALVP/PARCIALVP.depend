@@ -1,0 +1,57 @@
+# depslib dependency file v1.0
+1561420086 source:c:\users\alumno\desktop\parcialvp\controller.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"dominio.h"
+	"parser.h"
+	"funciones_yg.h"
+	"controller.h"
+
+1561413794 c:\users\alumno\desktop\parcialvp\linkedlist.h
+
+1561421289 c:\users\alumno\desktop\parcialvp\dominio.h
+
+1561417578 c:\users\alumno\desktop\parcialvp\parser.h
+
+1561414789 c:\users\alumno\desktop\parcialvp\funciones_yg.h
+
+1561414274 c:\users\alumno\desktop\parcialvp\controller.h
+
+1561421652 source:c:\users\alumno\desktop\parcialvp\dominio.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"dominio.h"
+	"funciones_yg.h"
+
+1561414789 source:c:\users\alumno\desktop\parcialvp\funciones_yg.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	"funciones_yg.h"
+
+1561418991 source:c:\users\alumno\desktop\parcialvp\linkedlist.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"LinkedList.h"
+	"funciones_yg.h"
+
+1561419890 source:c:\users\alumno\desktop\parcialvp\main.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"Controller.h"
+	"dominio.h"
+	"funciones_yg.h"
+
+1561419334 source:c:\users\alumno\desktop\parcialvp\parser.c
+	<stdio.h>
+	<stdlib.h>
+	"LinkedList.h"
+	"dominio.h"
+	"funciones_yg.h"
+	"Controller.h"
+
